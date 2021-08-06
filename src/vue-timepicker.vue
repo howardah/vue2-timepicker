@@ -76,7 +76,9 @@ export default {
     hideDropdown: { type: Boolean, default: false },
     fixedDropdownButton: { type: Boolean, default: false },
 
-    debugMode: { type: Boolean, default: false }
+    debugMode: { type: Boolean, default: false },
+
+    required: { type: Boolean, default: false }
   },
 
   data () {
@@ -2056,6 +2058,7 @@ export default {
          :disabled="disabled"
          :readonly="!manualInput"
          :autocomplete="autocomplete"
+         :required="required"
          @focus="onFocus"
          @change="onChange"
          @blur="debounceBlur(); blurEvent()"
